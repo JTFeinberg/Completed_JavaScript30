@@ -71,7 +71,15 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    const frequencyObj = data.reduce((obj, str) => {
+      if(obj[str]) {
+        obj[str]++
+      } else {
+        obj[str] = 1
+      }
+      return obj
+    }, {})
+    console.log(frequencyObj)
   </script>
 </body>
 </html>
