@@ -28,6 +28,8 @@ const foundMatches = (wordToMatch) => {
   return cities.filter(place => place.city.match(regex) ||  place.state.match(regex))
 }
 
+const numberWithCommas = num => num.toString().replace(/\B(?=(\{3})+(?!\d))/g, ',')
+
 function displayMatches() {
   const filteredCities = foundMatches(this.value)
   const html = filteredCities.map(place => {
