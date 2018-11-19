@@ -29,7 +29,8 @@ const foundMatches = (wordToMatch) => {
 }
 
 function displayMatches() {
-  console.log(this.value)
+  const filteredCities = foundMatches(this.value)
+  console.log(filteredCities)
 }
 
 const searchInput = document.querySelector('.search')
