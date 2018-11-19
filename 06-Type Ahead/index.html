@@ -30,7 +30,14 @@ const foundMatches = (wordToMatch) => {
 
 function displayMatches() {
   const filteredCities = foundMatches(this.value)
-  console.log(filteredCities)
+  const html = filteredCities.map(place => {
+    return `
+      <li>
+        <span class="name">${place.city}, ${place.state}</span>
+        <span class="population">${place.population}</span>
+      </li>
+    `
+  })
 }
 
 const searchInput = document.querySelector('.search')
