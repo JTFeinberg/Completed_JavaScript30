@@ -22,6 +22,11 @@ const cities = []
 fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data))
+
+const foundMatches = (wordToMatch) => {
+  const regex = new RegExp(wordToMatch, 'gi')
+}
+
 </script>
   </body>
 </html>
