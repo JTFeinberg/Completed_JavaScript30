@@ -31,6 +31,7 @@ const foundMatches = (wordToMatch) => {
 function displayMatches() {
   const filteredCities = foundMatches(this.value)
   const html = filteredCities.map(place => {
+    const regex = new RegExp(this.value, 'gi')
     return `
       <li>
         <span class="name">${place.city}, ${place.state}</span>
