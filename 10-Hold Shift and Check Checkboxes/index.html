@@ -108,7 +108,9 @@
     }
     checkboxes.forEach((checkbox, idx) => {
       if(nextClickedIdx > lastClickedIdx && idx > lastClickedIdx && idx < nextClickedIdx ) {
-        console.log(checkbox)
+        checkbox.click()
+      }
+      if(nextClickedIdx < lastClickedIdx && idx < lastClickedIdx && idx > nextClickedIdx ) {
         checkbox.click()
       }
     })
