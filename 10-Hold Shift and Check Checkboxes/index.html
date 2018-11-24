@@ -104,14 +104,14 @@
     lastClicked = e.target
     console.log(checkboxes.indexOf(lastClicked))
   }
-  function checkMultiple(e) {
+  function toggleShift(e) {
     if(e.keyCode !== 16) return
     shiftDown = !shiftDown
   }
 
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick))
-  window.addEventListener('keydown', checkMultiple)
-  window.addEventListener('keyup', checkMultiple)
+  window.addEventListener('keydown', toggleShift)
+  window.addEventListener('keyup', toggleShift)
 </script>
 </body>
 </html>
