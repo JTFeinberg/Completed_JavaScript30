@@ -104,9 +104,12 @@
     lastClicked = e.target
     console.log(checkboxes.indexOf(lastClicked))
   }
+  function checkMultiple(e) {
+    console.log(e.keyCode)
+  }
 
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick))
-
+  window.addEventListener('keydown', checkMultiple)
 </script>
 </body>
 </html>
