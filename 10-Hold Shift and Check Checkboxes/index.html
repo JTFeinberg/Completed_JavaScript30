@@ -97,14 +97,22 @@
 
 <script>
   const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')]
-  let lastClicked
+  let lastClickedIdx
   let shiftDown = false
 
   function handleClick(e) {
+    let nextClickedIdx = checkboxes.indexOf(e.target)
     if(!shiftDown) {
-      lastClicked = e.target 
+      lastClickedIdx = checkboxes.indexOf(e.target)
       return
     }
+    
+    // checkboxes.map((checkbox, idx) => {
+    //   if(lastClickedIdx > checkboxes.indexOf(e.target) && idx >  ) {
+
+    //   }
+    // })
+    console.log(e.target.onclick)
     console.log(checkboxes.indexOf(lastClicked))
   }
   function toggleShift(e) {
