@@ -106,11 +106,12 @@
   }
   function checkMultiple(e) {
     if(e.keyCode !== 16) return
-    console.log(e.keyCode)
+    shiftDown = !shiftDown
   }
 
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick))
   window.addEventListener('keydown', checkMultiple)
+  window.addEventListener('keyup', checkMultiple)
 </script>
 </body>
 </html>
