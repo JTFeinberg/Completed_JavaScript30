@@ -97,11 +97,16 @@
 
 <script>
   const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')]
+  let lastClicked
+  let shiftDown = false
   console.log(checkboxes)
   function handleClick(e) {
-    console.log(checkboxes.indexOf(e.target))
+    lastClicked = e.target
+    console.log(checkboxes.indexOf(lastClicked))
   }
+
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick))
+
 </script>
 </body>
 </html>
