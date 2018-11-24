@@ -96,34 +96,25 @@
   </div>
 
 <script>
-  const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')]
-  let lastClickedIdx
-  let shiftDown = false
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+  let lastClicked
 
   function handleClick(e) {
-    let nextClickedIdx = checkboxes.indexOf(e.target)
-    if(!shiftDown) {
-      lastClickedIdx = checkboxes.indexOf(e.target)
-      return
+    let inBetween = false
+    if(e.shiftKey && this.checked) {
+      checkboxes.forEach(checkbox => {
+        if(checkbox === this || checkbox === lastClicked) {
+          inBetween = !inBetween
+        }
+        if(inBetween) {
+          checkbox.checked = true
+        }
+      })
     }
-    checkboxes.forEach((checkbox, idx) => {
-      if(nextClickedIdx > lastClickedIdx && idx > lastClickedIdx && idx < nextClickedIdx ) {
-        checkbox.click()
-      }
-      if(nextClickedIdx < lastClickedIdx && idx < lastClickedIdx && idx > nextClickedIdx ) {
-        checkbox.click()
-      }
-    })
-    lastClickedIdx = checkboxes.indexOf(e.target)
-  }
-  function toggleShift(e) {
-    if(e.keyCode !== 16) return
-    shiftDown = !shiftDown
+    lastClicked = this
   }
 
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick))
-  window.addEventListener('keydown', toggleShift)
-  window.addEventListener('keyup', toggleShift)
 </script>
 </body>
 </html>
