@@ -106,14 +106,13 @@
       lastClickedIdx = checkboxes.indexOf(e.target)
       return
     }
-    
-    // checkboxes.map((checkbox, idx) => {
-    //   if(lastClickedIdx > checkboxes.indexOf(e.target) && idx >  ) {
-
-    //   }
-    // })
-    console.log(e.target.onclick)
-    console.log(checkboxes.indexOf(lastClicked))
+    checkboxes.forEach((checkbox, idx) => {
+      if(nextClickedIdx > lastClickedIdx && idx > lastClickedIdx && idx < nextClickedIdx ) {
+        console.log(checkbox)
+        checkbox.click()
+      }
+    })
+    lastClickedIdx = checkboxes.indexOf(e.target)
   }
   function toggleShift(e) {
     if(e.keyCode !== 16) return
