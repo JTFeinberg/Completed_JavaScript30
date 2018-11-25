@@ -101,18 +101,31 @@
 
   function handleClick(e) {
     let inBetween = false
-    if(e.shiftKey && this.checked) {
-      checkboxes.forEach(checkbox => {
-        if(checkbox === this || checkbox === lastClicked) {
-          inBetween = !inBetween
-        }
-        if(inBetween) {
-          checkbox.checked = true
-        }
-      })
+    if(e.shiftKey) {
+      if(this.checked){
+        checkboxes.forEach(checkbox => {
+          if(checkbox === this || checkbox === lastClicked) {
+            inBetween = !inBetween
+          }
+          if(inBetween) {
+            checkbox.checked = true
+          }
+          
+        })
+      }
+      if(!this.checked){
+        checkboxes.forEach(checkbox => {
+          if(checkbox === this || checkbox === lastClicked) {
+            inBetween = !inBetween
+          }
+          if(inBetween) {
+          checkbox.checked = false
+          }
+        })
     }
-    lastClicked = this
   }
+    lastClicked = this
+}
 
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick))
 </script>
