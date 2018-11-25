@@ -25,6 +25,10 @@ function skip() {
     video.currentTime+= parseFloat(this.dataset.skip)
 }
 
+function handleRangeUpdate() {
+    console.log(this.value)
+}
+
 // Hook up event listeners
 toggle.addEventListener('click', togglePlay)
 
