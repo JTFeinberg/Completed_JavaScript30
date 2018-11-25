@@ -26,6 +26,7 @@ function skip() {
 }
 
 function handleRangeUpdate() {
+    console.dir(video)
     console.log(this.name)
     console.log(this.value)
 }
@@ -40,3 +41,4 @@ video.addEventListener('pause', updateButton)
 skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip))
 
 ranges.forEach(slider => slider.addEventListener('change', handleRangeUpdate))
+ranges.forEach(slider => slider.addEventListener('mousemove', handleRangeUpdate))
