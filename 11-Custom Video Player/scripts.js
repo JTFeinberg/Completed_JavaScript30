@@ -35,7 +35,8 @@ function handleProgress() {
 }
 
 function scrub(e) {
-    console.log(e)
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration
+    video.currentTime = scrubTime
 }
 
 // Hook up event listeners
@@ -51,3 +52,4 @@ skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip))
 ranges.forEach(slider => slider.addEventListener('change', handleRangeUpdate))
 ranges.forEach(slider => slider.addEventListener('mousemove', handleRangeUpdate))
 
+progress.addEventListener('click', scrub)
