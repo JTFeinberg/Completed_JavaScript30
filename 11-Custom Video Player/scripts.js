@@ -30,7 +30,8 @@ function handleRangeUpdate() {
 }
 
 function handleProgress() {
-    console.log(this)
+    const percent = (video.currentTime / video.duration) * 100
+    progressBar.style.flexBasis = `${percent}%`
 }
 
 // Hook up event listeners
@@ -44,3 +45,4 @@ skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip))
 
 ranges.forEach(slider => slider.addEventListener('change', handleRangeUpdate))
 ranges.forEach(slider => slider.addEventListener('mousemove', handleRangeUpdate))
+
