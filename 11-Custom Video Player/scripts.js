@@ -29,6 +29,10 @@ function handleRangeUpdate() {
     video[this.name] = this.value
 }
 
+function handleProgress() {
+    console.log(this)
+}
+
 // Hook up event listeners
 toggle.addEventListener('click', togglePlay)
 
