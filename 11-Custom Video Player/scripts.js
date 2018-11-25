@@ -26,9 +26,7 @@ function skip() {
 }
 
 function handleRangeUpdate() {
-    console.dir(video)
-    console.log(this.name)
-    console.log(this.value)
+    video[this.name] = this.value
 }
 
 // Hook up event listeners
