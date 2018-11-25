@@ -17,3 +17,6 @@ function togglePlay () {
         video.pause()
     }
 }
+
+// Hook up event listeners
+toggle.addEventListener('click', togglePlay)
