@@ -34,6 +34,10 @@ function handleProgress() {
     progressBar.style.flexBasis = `${percent}%`
 }
 
+function scrub(e) {
+    console.log(e)
+}
+
 // Hook up event listeners
 toggle.addEventListener('click', togglePlay)
 
