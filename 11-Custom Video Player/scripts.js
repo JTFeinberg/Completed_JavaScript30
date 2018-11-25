@@ -22,7 +22,11 @@ function updateButton() {
 }
 
 function skip() {
-    console.log('SKIP')
+    if(this.dataset.skip === '25') {
+        video.currentTime+= 25
+    } else {
+        video.currentTime-= 10
+    }
 }
 
 // Hook up event listeners
@@ -32,5 +36,4 @@ video.addEventListener('click', togglePlay)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
 
-console.log(skipButtons)
 skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip))
