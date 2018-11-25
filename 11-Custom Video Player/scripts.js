@@ -10,7 +10,7 @@ const ranges = player.querySelector('.player__slider')
 // Build Out Functions
 console.dir(toggle)
 console.dir(video)
-function togglePlay () {
+const togglePlay = () => {
     if(video.paused) {
         video.play()
     } else {
