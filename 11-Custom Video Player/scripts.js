@@ -26,3 +26,5 @@ function updateButton() {
 // Hook up event listeners
 toggle.addEventListener('click', togglePlay)
 video.addEventListener('click', togglePlay)
+video.addEventListener('play', updateButton)
+video.addEventListener('pause', updateButton)
