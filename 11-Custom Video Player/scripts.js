@@ -40,6 +40,7 @@ toggle.addEventListener('click', togglePlay)
 video.addEventListener('click', togglePlay)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
+video.addEventListener('timeupdate', handleProgress)
 
 skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip))
 
