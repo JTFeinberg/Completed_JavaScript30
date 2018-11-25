@@ -22,11 +22,7 @@ function updateButton() {
 }
 
 function skip() {
-    if(this.dataset.skip === '25') {
-        video.currentTime+= 25
-    } else {
-        video.currentTime-= 10
-    }
+    video.currentTime+= parseFloat(this.dataset.skip)
 }
 
 // Hook up event listeners
