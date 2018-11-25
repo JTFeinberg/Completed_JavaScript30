@@ -23,8 +23,13 @@ function updateButton() {
     toggle.textContent = icon
 }
 
+function skip() {
+    console.log('SKIP')
+}
+
 // Hook up event listeners
 toggle.addEventListener('click', togglePlay)
+
 video.addEventListener('click', togglePlay)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
