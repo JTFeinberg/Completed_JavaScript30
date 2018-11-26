@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script
+      type="text/javascript"
+      src="http://www.cornify.com/js/cornify.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+      const pressed = []
+      const secretCode = 'show me the money'
+      window.addEventListener('keyup', (e) => {
+        pressed.push(e.key)
+        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+        if (pressed.join('').includes(secretCode)){
+          console.log('%cYou had me at hello', 'font-size: 50px; background: linear-gradient(90deg,#3f69c5 0%,#3ddb93 100%); color: #bada55')
+          cornify_add()
+        }
+      })
+      
+    </script>
+  </body>
+</html>
