@@ -6,6 +6,7 @@ const progressBar = player.querySelector('.progress__filled')
 const toggle = player.querySelector('.toggle')
 const skipButtons = player.querySelectorAll('[data-skip]')
 const ranges = player.querySelectorAll('.player__slider')
+const fullscreen = player.querySelector('.player__fullscreen')
 
 // Build Out Functions
 const togglePlay = () => {
