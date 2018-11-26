@@ -41,7 +41,7 @@ function scrub(e) {
 }
 
 function makeFullscreen() {
-    console.log('fullscreen')
+    video.webkitRequestFullScreen()
 }
 
 // Hook up event listeners
@@ -63,3 +63,5 @@ progress.addEventListener('mousemove', (e) => mouseDown && scrub(e))
 progress.addEventListener('mousedown', () => mouseDown = true)
 progress.addEventListener('mouseup', () => mouseDown = false)
 progress.addEventListener('mouseout', () => mouseDown = false)
+
+fullscreen.addEventListener('click', makeFullscreen)
