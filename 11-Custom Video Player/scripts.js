@@ -53,3 +53,4 @@ ranges.forEach(slider => slider.addEventListener('change', handleRangeUpdate))
 ranges.forEach(slider => slider.addEventListener('mousemove', handleRangeUpdate))
 
 progress.addEventListener('click', scrub)
+progress.addEventListener('mousemove', scrub)
