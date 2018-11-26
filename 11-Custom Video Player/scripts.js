@@ -52,5 +52,8 @@ skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip))
 ranges.forEach(slider => slider.addEventListener('change', handleRangeUpdate))
 ranges.forEach(slider => slider.addEventListener('mousemove', handleRangeUpdate))
 
+let mouseDown = false
 progress.addEventListener('click', scrub)
 progress.addEventListener('mousemove', scrub)
+progress.addEventListener('mousedown', () => mouseDown = true)
+progress.addEventListener('mouseup', () => mouseDown = false)
