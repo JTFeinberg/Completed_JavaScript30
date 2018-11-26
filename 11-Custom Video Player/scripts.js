@@ -40,6 +40,10 @@ function scrub(e) {
     video.currentTime = scrubTime
 }
 
+function makeFullscreen() {
+    console.log('fullscreen')
+}
+
 // Hook up event listeners
 toggle.addEventListener('click', togglePlay)
 
