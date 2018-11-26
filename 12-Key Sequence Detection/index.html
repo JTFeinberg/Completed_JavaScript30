@@ -11,13 +11,14 @@
   <body>
     <script>
       const pressed = []
-      const secretCode = 'j'
+      const secretCode = 'show me the money'
       window.addEventListener('keyup', (e) => {
         console.log(e.key)
         pressed.push(e.key)
         pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
         if (pressed.join('').includes(secretCode)){
           console.log('%cYou had me at hello', 'font-size: 50px; background: linear-gradient(90deg,#3f69c5 0%,#3ddb93 100%); color: #bada55')
+          cornify_add()
         }
         console.log(pressed)
       })
