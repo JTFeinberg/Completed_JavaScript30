@@ -242,7 +242,9 @@
 
       function checkSlide(e) {
         sliderImages.forEach(slideImage => {
-          const slideInAt = window.scrollY + window.innerHeight
+          const slideInAt =
+            window.scrollY + window.innerHeight - slideImage.height / 2
+          console.log(slideInAt)
         })
       }
 
