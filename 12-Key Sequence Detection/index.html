@@ -12,15 +12,60 @@
     <script>
       const pressed = []
       const secretCode = 'show me the money'
+      const clearWindow = 'abort'
+      let unis, run
+      let deg = 90
+      let hsl1 = 180
+      let hsl2 = 0
+
+      function spinBackgroun() {
+        document.querySelector('body').style.background = `linear-gradient(${deg}deg,hsl(${hsl1}, 100%, 50%) 0%,hsl(${hsl2}, 100%, 50%) 100%)`
+        deg++
+        hsl1++  
+        hsl2++
+      }
+      function toggleImg() {
+        const images = document.querySelectorAll('img')
+        images.forEach(img => {
+          img.style.display = 'none'
+        });
+      }
+
+      function myStopFunction(arrOfIntervals) {
+        arrOfIntervals.forEach(interval => clearInterval(interval))
+      }
+      function unicornInt() {
+        return  unis = setInterval(cornify_add, 2000)
+      }
+      
       window.addEventListener('keyup', (e) => {
         pressed.push(e.key)
         pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+        
         if (pressed.join('').includes(secretCode)){
           console.log('%cYou had me at hello', 'font-size: 50px; background: linear-gradient(90deg,#3f69c5 0%,#3ddb93 100%); color: #bada55')
           cornify_add()
+          unicornInt()
+          run = setInterval(spinBackgroun, 10)
+        }
+        if(pressed.join('').includes(clearWindow)) {
+          toggleImg()
+          myStopFunction([unis, run])
         }
       })
       
     </script>
   </body>
 </html>
+
+
+<!-- function spinBackgroun() {
+  document.querySelector('body').style.background = `linear-gradient(${deg}deg,hsl(${hsl1}, 100%, 50%) 0%,hsl(${hsl2}, 100%, 50%) 100%)`
+  deg++
+  hsl1++  
+  hsl2++
+}
+let deg = 90
+let hsl1 = 180
+let hsl2 = 0
+let run = setInterval(spinBackgroun, 10) -->
