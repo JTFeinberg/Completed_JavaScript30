@@ -245,6 +245,7 @@
           const slideInAt =
             window.scrollY + window.innerHeight - slideImage.height / 2
           const imageBottom = slideImage.offsetTop + slideImage.height
+          const isHalfShown = slideInAt >= slideImage.offsetTop
         })
       }
 
