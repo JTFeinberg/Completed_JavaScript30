@@ -247,6 +247,9 @@
           const imageBottom = slideImage.offsetTop + slideImage.height
           const isHalfShown = slideInAt >= slideImage.offsetTop
           const isScrolledPast = window.scrollY > imageBottom
+          if (isHalfShown && !isScrolledPast) {
+            slideImage.classList.add('active')
+          }
         })
       }
 
