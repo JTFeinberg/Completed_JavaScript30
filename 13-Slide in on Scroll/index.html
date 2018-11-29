@@ -249,6 +249,8 @@
           const isScrolledPast = window.scrollY > imageBottom
           if (isHalfShown && !isScrolledPast) {
             slideImage.classList.add('active')
+          } else {
+            slideImage.classList.remove('active')
           }
         })
       }
