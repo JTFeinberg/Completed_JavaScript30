@@ -13,17 +13,23 @@
       age = 200
       console.log({ age, age2 })
 
+      let name = 'Jacob'
+      let name2 = name
+      console.log({ name, name2 })
+      name = 'Madison'
+      console.log({ name, name2 })
+
       // Let's say we have an array
       const players = ['Wes', 'Sarah', 'Ryan', 'Poppy']
 
       // and we want to make a copy of it.
 
       // You might think we can just do something like this:
-
+      const team = players
+      console.log({ players, team })
       // however what happens when we update that array?
-
+      team[3] = 'John'
       // now here is the problem!
-
       // oh no - we have edited the original array too!
 
       // Why? It's because that is an array reference, not an array copy. They both point to the same array!
@@ -31,13 +37,23 @@
       // So, how do we fix this? We take a copy instead!
 
       // one way
+      const team2 = players.slice()
 
       // or create a new array and concat the old one in
+      const team3 = [].concat(players)
 
       // or use the new ES6 Spread
+      const team4 = [...players]
 
       // now when we update it, the original one isn't changed
+      team2[3] = 'Jan'
+      team3[3] = 'Michael'
+      team4[3] = 'Emily'
 
+      const team5 = Array.from(players)
+      team5[3] = 'Laura'
+
+      console.log({ players, team, team2, team3, team4, team5 })
       // The same thing goes for objects, let's say we have a person object
 
       // with Objects
@@ -47,12 +63,35 @@
       }
 
       // and think we make a copy:
+      const captain = person
+      captain.number = 99
+      console.log(person)
 
       // how do we take a copy instead?
+      const captain2 = Object.assign({}, person, { age: 55, number: 30 })
+      console.log(person, captain2)
 
       // We will hopefully soon see the object ...spread
+      const captain3 = { ...person, name: 'Bambu' }
+      console.log(person, captain3)
 
       // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+      const jacob = {
+        name: 'Jacob',
+        age: 26,
+        social: {
+          github: 'https://github.com/JTFeinberg',
+          linkedIn: 'https://www.linkedin.com/in/jacobfeinberg92/'
+        }
+      }
+
+      console.clear()
+      console.log(jacob)
+
+      const shallow = { ...jacob, name: 'Shallow' }
+      shallow.social.github = 'Shallow copy'
+
+      console.log({ jacob, shallow })
     </script>
   </body>
 </html>
