@@ -255,7 +255,19 @@
         })
       }
 
+      const thisChecker = () => {
+        console.log(this)
+      }
+
+      function thisFunc() {
+        console.log('FUNC', this)
+      }
+      thisChecker()
+      thisFunc()
+
       window.addEventListener('scroll', debounce(checkSlide))
+      document.querySelector('body').addEventListener('click', thisFunc)
+      document.querySelector('body').addEventListener('click', thisChecker)
     </script>
 
     <style>
