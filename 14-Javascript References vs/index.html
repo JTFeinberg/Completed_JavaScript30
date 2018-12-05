@@ -37,12 +37,19 @@
       // So, how do we fix this? We take a copy instead!
 
       // one way
+      const team2 = players.slice()
 
       // or create a new array and concat the old one in
+      const team3 = [].concat(players)
 
       // or use the new ES6 Spread
+      const team4 = [...players]
 
       // now when we update it, the original one isn't changed
+      team2[3] = 'Jan'
+      team3[3] = 'Michael'
+      team4[3] = 'Emily'
+      console.log({ players, team, team2, team3, team4 })
 
       // The same thing goes for objects, let's say we have a person object
 
