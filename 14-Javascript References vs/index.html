@@ -76,6 +76,22 @@
       console.log(person, captain3)
 
       // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+      const jacob = {
+        name: 'Jacob',
+        age: 26,
+        social: {
+          github: 'https://github.com/JTFeinberg',
+          linkedIn: 'https://www.linkedin.com/in/jacobfeinberg92/'
+        }
+      }
+
+      console.clear()
+      console.log(jacob)
+
+      const shallow = { ...jacob, name: 'Shallow' }
+      shallow.social.github = 'Shallow copy'
+
+      console.log({ jacob, shallow })
     </script>
   </body>
 </html>
