@@ -93,6 +93,8 @@
         if (!el.matches('input')) return //skip this unless its an input
         const { index } = el.dataset
         items[index].done = !items[index].done
+        localStorage.setItem('items', JSON.stringify(items))
+        populateList(items, itemsList)
       }
 
       addItems.addEventListener('submit', addItem)
