@@ -44,6 +44,9 @@
           x = x + e.offsetLeft
           y = y + e.offsetTop
         }
+
+        const xWalk = x / (width * walk) - walk / 2
+        const yWalk = x / (height * walk) - walk / 2
       }
 
       hero.addEventListener('mousemove', shadow)
