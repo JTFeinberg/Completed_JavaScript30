@@ -79,17 +79,17 @@
 
       const bandList = document.querySelector('#bands')
 
-      // function populateList(bands, bandList) {
-      //   bandList.innerHTML = bands
-      //     .map(band => {
-      //       return `
-      //               <li>
-      //                 ${band}
-      //               </li>
-      //             `
-      //     })
-      //     .join('')
-      // }
+      function populateList(bands, bandList) {
+        bandList.innerHTML = bands
+          .map(band => {
+            return `
+                    <li>
+                      ${band}
+                    </li>
+                  `
+          })
+          .join('')
+      }
       // populateList(sortedBands, bandList)
     </script>
   </body>
