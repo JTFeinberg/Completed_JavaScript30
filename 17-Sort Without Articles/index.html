@@ -72,19 +72,27 @@
       const sortedBands = bands.sort((a, b) => (cleanName(a) < cleanName(b) ? -1 : 1))
 
       const bandList = document.querySelector('#bands')
-
-      function populateList(bands, bandList) {
-        bandList.innerHTML = bands
-          .map(band => {
-            return `
+      bandList.innerHTML = sortedBands
+        .map(band => {
+          return `
                     <li>
                       ${band}
                     </li>
                   `
-          })
-          .join('')
-      }
-      populateList(sortedBands, bandList)
+        })
+        .join('')
+      // function populateList(bands, bandList) {
+      //   bandList.innerHTML = bands
+      //     .map(band => {
+      //       return `
+      //               <li>
+      //                 ${band}
+      //               </li>
+      //             `
+      //     })
+      //     .join('')
+      // }
+      // populateList(sortedBands, bandList)
     </script>
   </body>
 </html>
