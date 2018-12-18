@@ -67,14 +67,14 @@
 
         bandA = articles.includes(splitA[0]) ? a.slice(a.indexOf(' ') + 1) : a
         bandB = articles.includes(splitB[0]) ? b.slice(b.indexOf(' ') + 1) : b
-        // if (bandA < bandB) {
-        //   return -1
-        // }
-        // if (bandA > bandB) {
-        //   return 1
-        // }
-        // // bands must be equal
-        // return 0
+        if (bandA < bandB) {
+          return -1
+        }
+        if (bandA > bandB) {
+          return 1
+        }
+        // bands must be equal
+        return 0
       })
 
       // console.log(sortedBands)
