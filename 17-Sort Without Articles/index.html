@@ -61,6 +61,14 @@
       ]
       const articles = ['a', 'an', 'the']
 
+      const cleanNames = bandName => {
+        bandNameArr = bandName.toLowerCase().split(' ')
+
+        return articles.includes(bandNameArr[0])
+          ? bandName.slice(bandName.indexOf(' ') + 1)
+          : bandName
+      }
+
       const sortedBands = bands.sort((a, b) => {
         splitA = a.toLowerCase().split(' ')
         splitB = b.toLowerCase().split(' ')
