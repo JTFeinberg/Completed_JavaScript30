@@ -75,7 +75,9 @@
           return mins * 60 + secs
         })
         .reduce((total, vidSeconds) => total + vidSeconds)
-      const secondsLeft = seconds
+      let secondsLeft = seconds
+      const hours = Math.floor(secondsLeft / 3600)
+      secondsLeft = seconds % 3600
       console.log(secondsLeft)
     </script>
   </body>
