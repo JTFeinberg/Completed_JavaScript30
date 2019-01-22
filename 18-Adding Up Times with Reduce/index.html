@@ -67,7 +67,7 @@
     </ul>
     <script>
       const timeNodes = [...document.querySelectorAll('[data-time]')]
-
+      //***FIRST RUN THROUGH***
       // const seconds = timeNodes
       //   .map(node => node.dataset.time)
       //   .map(timeCode => {
@@ -76,19 +76,18 @@
       //   })
       //   .reduce((total, vidSeconds) => total + vidSeconds)
 
-      const seconds = timeNodes.reduce((total, node) => {
-        const timeCode = node.dataset.time
-        const [mins, secs] = timeCode.split(':').map(parseFloat)
-        const vidSeconds = mins * 60 + secs
-        return total + vidSeconds
-      }, 0)
-
-      // .map(node => node.dataset.time)
-      // .map(timeCode => {
+      //***SECOND RUN THROUGH***
+      // const seconds = timeNodes.reduce((total, node) => {
+      //   const timeCode = node.dataset.time
       //   const [mins, secs] = timeCode.split(':').map(parseFloat)
-      //   return mins * 60 + secs
-      // })
-      // .reduce((total, vidSeconds) => total + vidSeconds)
+      //   const vidSeconds = mins * 60 + secs
+      //   return total + vidSeconds
+      // }, 0)
+
+      const seconds = timeNodes.reduce((total, node) => {
+        const [mins, secs] = node.dataset.time.split(':').map(parseFloat)
+        return total + (mins * 60 + secs)
+      }, 0)
 
       let secondsLeft = seconds
       const hours = Math.floor(secondsLeft / 3600)
